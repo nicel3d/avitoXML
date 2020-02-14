@@ -24,8 +24,7 @@ def build_avito_xml(data):
   for item in list_ads:
     if item.validate():
       ad = etree.SubElement(ads, "Ad")
-      etree.SubElement(ad, "Id").text = item.id
-
+      etree_item(ad, "Id", item.id)
       etree_item(ad, "Category", item.category)
       etree_item(ad, "OperationType", item.operationType)
       etree_item(ad, "DateBegin", item.get_date_begin_text())
